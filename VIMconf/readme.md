@@ -4,3 +4,4 @@
 | File | Kind | Path | Description | Author | Year |
 | --- | --- | --- | --- | --- | --- |
 | vimConfigurationFile.txt |configuration file | ./vimrc | vim configuration file | AM | 2017
+| vimDracultaTheme.txt | Dracula theme for vim | ./vimrc | add this text to VIM configuration file to use Dracula theme | AM | 2017 |
