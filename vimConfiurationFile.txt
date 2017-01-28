@@ -1,6 +1,7 @@
 "vim configuration file
 "configuration file path
 " /.vimrc
+"(C) Antonio Maulucci 2017
 set number                                                                  
 set autoindent
 syntax on
