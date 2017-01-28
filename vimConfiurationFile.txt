@@ -1,5 +1,6 @@
-#vim configuration file
-# /.vimrc
+"vim configuration file
+"configuration file path
+" /.vimrc
 set number                                                                  
 set autoindent
 syntax on
