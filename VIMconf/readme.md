@@ -3,4 +3,4 @@
 
 | File | Kind | Path | Description | Author | Year |
 | --- | --- | --- | --- | --- | --- |
-| xxk |configuration file | ./vimrc | vim configuration file | AM | 2017
+| vimConfigurationFile.txt |configuration file | ./vimrc | vim configuration file | AM | 2017
