@@ -7,3 +7,6 @@ set autoindent
 syntax on
 set cursorline "to higline current row
 set showmatch "to show matching of pharentesis () [] {}
+set tabstop=4 "tabs are 4 visual spaces
+set softtabstop=4 "tabs viewed during editing are 4
+"set expandtab "this command will use tabs such as spaces
