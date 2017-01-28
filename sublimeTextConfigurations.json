@@ -1,0 +1,12 @@
+{
+	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Monokai.tmTheme",
+	"font_face": "Courier Prime Code",
+	"font_size": 17,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"show_encoding": true,
+	"show_line_endings": true,
+	"theme": "Boxy Monokai.sublime-theme"
+}
