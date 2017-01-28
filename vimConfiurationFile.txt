@@ -1,0 +1,7 @@
+#vim configuration file
+# /.vimrc
+set number                                                                  
+set autoindent
+syntax on
+set cursorline "to higline current row
+set showmatch "to show matching of pharentesis () [] {}
