@@ -8,6 +8,7 @@
 | ---: | :--- |
 | theme | Monokai Sublime Text 3.jar |
 | Theme | Vim dark.jar |
+| theme | Monokai Sublime True.jar |
 
 ## Install themes
 
