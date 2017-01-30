@@ -7,6 +7,7 @@
 | Kind | Name |
 | ---: | :--- |
 | theme | Monokai Sublime Text 3.jar |
+| Theme | Vim dark.jar |
 
 ## Install themes
 
