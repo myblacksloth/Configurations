@@ -12,7 +12,7 @@
 ## Install themes
 
 To install themes download it from
-[enter link description here](http://color-themes.com/)
+[HERE](http://color-themes.com/)
 or from other sources
 
 > you'll download a .jar file
