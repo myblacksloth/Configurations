@@ -6,7 +6,7 @@
 
 | Kind | Name |
 | ---: | :--- |
-| theme | x |
+| theme | Monokai Sublime Text 3.jar |
 
 ## Install themes
 
@@ -17,3 +17,7 @@ or from other sources
 > you'll download a .jar file
 
 go into IntelliJ -> file -> import settings -> import *jar* file -> restart program
+
+to ### set it ### settings -> Editor -> Colors & Font -> General -> set theme
+
+to ### set font ### settings -> editor -> color&font -> font
