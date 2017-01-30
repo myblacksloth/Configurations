@@ -2,6 +2,12 @@
 - themes
 - settings
 
+## Resources
+
+| Kind | Name |
+| ---: | :--- |
+| theme | x |
+
 ## Install themes
 
 To install themes download it from
