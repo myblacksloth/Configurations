@@ -19,3 +19,7 @@
 ## step 5
 
 ![firefox is linked](https://s30.postimg.org/rcgqv4d8x/Schermata_del_2017_02_01_00_10_19.png)
+
+#  Firefox Home
+
+[Firefox Home](https://www.mozilla.org/it/firefox/new/)
