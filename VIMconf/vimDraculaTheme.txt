@@ -2,6 +2,8 @@
 
 "DRACULA THEME FOR VIM
 
+" add this text into vim configuration file (~/.vimrc) to use!
+
 "--------------------------------------------------------------------------------------------------------
 " Dracula Theme v1.2.7
 "
