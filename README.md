@@ -1,4 +1,4 @@
-#Configurations
+# Configurations
 
  - Settings
  - Terminal Settings
