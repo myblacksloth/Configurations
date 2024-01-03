@@ -1,0 +1,45 @@
+version: '3.1'
+services:
+  database:
+    image: mysql
+    container_name: mysql_database
+    restart: always
+    ports:
+      - 4306:3306
+    environment:
+      # database sql
+      MYSQL_DATABASE: 'db'
+      # utente
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      # utente root
+      MYSQL_ROOT_PASSWORD: 'password'
+    volumes:
+      # mkdir -p ~/mydocker/mysql_compose
+      # mkdir -p ~/mydocker/mysql_compose/my_db
+      - my_db:/var/lib/mysql
+    networks:
+      - mysql_app_network
+  phpmyadmin:
+    depends_on:
+      - database
+    image: phpmyadmin/phpmyadmin
+    container_name: mysql_phpmyadmin
+    restart: always
+    # links:
+    #   - mysql_database
+    environment:
+      PMA_HOST: database
+      # PMA_ARBITRARY: 1
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      # 79.137.80.180:8380
+      - 8380:80
+    networks:
+      - mysql_app_network
+volumes:
+  my_db:
+networks:
+    mysql_app_network:
+      driver: bridge
+
