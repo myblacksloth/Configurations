@@ -1,0 +1,24 @@
+sudo docker run --name test_apine_smb -p 7139:193 -p 7445:445 -d -it alpine /bin/ash
+sudo docker exec -it test_apine_smb /bin/sh
+sudo docker stop test_apine_smb
+sudo docker rm test_apine_smb
+
+apk update
+apk add samba shadow openrc
+mkdir -p /sharedsmb
+yes 'share' | adduser share
+usermod -d /sharedsmb -s /bin/false share
+yes 'share' | smbpasswd -a share
+
+RUN echo "[sambashare]" >> /etc/samba/smb.conf && \
+        echo "    comment = Samba on Ubuntu" >> /etc/samba/smb.conf && \
+        echo "    valid users = share" >> /etc/samba/smb.conf && \
+        echo "    path = /sharedsmb" >> /etc/samba/smb.conf && \
+        echo "    read only = yes" >> /etc/samba/smb.conf && \
+        echo "    browsable = yes" >> /etc/samba/smb.conf
+
+openrc boot
+rc-update add samba
+rc-service samba start
+
+tail -f /var/log/samba/82.192.134.75.log
