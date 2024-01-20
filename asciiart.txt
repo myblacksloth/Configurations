@@ -1,0 +1,38 @@
+    //    ______________________________
+    //  / \                             \.
+    // |   |                            |.
+    //  \_ |                            |.
+    //     |                            |.
+    //     |                            |.
+    //     |          info of source    |.
+    //     |                            |.
+    //     |          code              |.
+    //     |                            |.
+    //     |                            |.
+    //     |                            |.
+    //     |                            |.
+    //     |                            |.
+    //     |                            |.
+    //     |   _________________________|___
+    //     |  /                            /.
+    //     \_/dc__________________________/.
+
+// https://github.com/devtooligan/awesome-ascii-art/blob/main/borders.txt
+// https://app.diagrams.net/
+// 
+// flow
+// https://asciiflow.com/legacy/
+// 
+// titoli
+// https://ascii.today/
+// https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+
+// 
+// tabelle
+// https://ozh.github.io/ascii-tables/
+// https://www.tablesgenerator.com/text_tables
+// 
+// 
+// torrent trackers
+// https://newtrackon.com/list
+// 
