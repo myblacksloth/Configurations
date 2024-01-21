@@ -1,0 +1,43 @@
+version: '3.1'
+#
+# sudo docker-compose build
+# sudo docker-compose up -d
+# sudo docker-compose start
+# sudo docker-compose ps -a
+# -------------------------------------------
+# sudo docker exec -it dkcomposer_samba /bin/bash
+# sudo docker-compose stop
+# sudo docker-compose down -v
+# sudo docker-compose rm -vf
+# -------------------------------------------
+# sudo docker image prune -a
+# sudo docker buildx prune -a
+# 
+#
+services:
+  proxy1:
+    container_name: myproxytester1
+    build: ./squid1
+    ports:
+      - x:3128
+    volumes:
+      - ./conf:/etc/squid
+      - ./script:/script
+    # command: sh -c "ls -l /script && printf 'user1\nuser1\n' | /script/adduser.sh && tail -f /dev/null"
+  proxy2:
+    container_name: myproxytester2
+    build: ./squid2
+    ports:
+      - y:3128
+    volumes:
+      - ./conf:/etc/squid
+      - ./script:/script
+    # command: sh -c "printf 'user2\nuser2\n' | /script/adduser.sh && tail -f /dev/null"
+    # command: printf 'user2\nuser2\n' | /script/adduser.sh && tail -f /dev/null
+    # command: /usr/bin/sh -c "tail -f /dev/null"
+  proxycentos:
+    container_name: myproxytestercentos
+    build: ./centos
+    depends_on:
+      - proxy1
+      - proxy2
