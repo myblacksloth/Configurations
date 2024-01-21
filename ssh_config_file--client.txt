@@ -1,0 +1,8 @@
+# this file is
+# 		~/.ssh/config
+Host ${hostname}
+    HostName ${host_ip_address}
+    User ${user_on_the_host}
+    #Port 22
+    IdentityFile ${~/.ssh/privateKey.pem}
+    ServerAliveInterval 6
