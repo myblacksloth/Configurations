@@ -1,0 +1,24 @@
+# file md e readme
+*.md
+!readme.md
+# file di gestione
+**/.git
+**/.idea
+**/.DS_Store
+**/._*
+# file binari
+**/bin
+**/*.jar
+**/target
+# file di configurazione
+.env
+.sass-cache
+# file di log
+**/logs
+# file miei di configurazione
+**/*private*
+**/myreadme
+**/*myreadme*
+**/*myReadme*
+**/*overProxy*
+**/*overproxy*
