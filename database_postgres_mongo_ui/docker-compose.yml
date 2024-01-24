@@ -1,0 +1,111 @@
+version: '3.1'
+#
+# -------------------------------------------
+# * alias
+# k = extract + j = execute + h = clean
+# -------------------------------------------
+# * build
+# sudo docker-compose build
+# sudo docker-compose up -d
+# sudo docker-compose start
+# sudo docker-compose ps -a
+# -------------------------------------------
+# * stop
+# sudo docker-compose stop
+# sudo docker-compose down -v
+# sudo docker-compose rm -vf
+# -------------------------------------------
+# * cleanall
+# sudo docker image prune -a
+# sudo docker buildx prune -a
+# 
+#
+# -------------------------------------------
+# * indirizzi
+# +---------+-------------+----------+
+# | service | internal ip | loc port |
+# +---------+-------------+----------+
+# | pdb     |    10.7.9.2 |     9935 |
+# | mdb     |    10.7.9.3 |     9936 |
+# | pgui    |   10.7.9.10 |     9934 |
+# | ggui    |   10.7.9.11 |     9937 |
+# +---------+-------------+----------+
+# -------------------------------------------
+services:
+  database:
+    container_name: postgrestest_database
+    build:
+      context: ./postgres
+    ports:
+      - ${database_porta}:5432
+    # nome dell'immagine creata
+    image: postgrestest_database
+    networks:
+      mynet:
+        ipv4_address: 10.7.9.2
+    logging:
+      options:
+        max-size: 50m
+  gui:
+    container_name: postgrestest_gui
+    build:
+      context: ./gui
+    ports:
+      - ${gui_porta}:8080
+    networks:
+      mynet:
+        ipv4_address: 10.7.9.10
+    depends_on:
+      - database
+  databasemongo:
+    container_name: postgrestest_mongodb
+    # env_file:
+    #   - path: ./.env
+    #     required: true
+    build:
+      context: ./mongodb
+      args:
+        # vriabili relative alla fase di build (lette dal file env)
+        # configuro le entry per funzionare anche con file .env errati o non presenti
+        - MONGO_INITDB_ROOT_USERNAME=${mongoadmin:-user}
+        - MONGO_INITDB_ROOT_PASSWORD=${mongopass:-user}
+        - MONGO_INITDB_DATABASE=${mongodb:-user}
+    environment:
+      # variabili reltive alla fase di running 
+      - MONGO_INITDB_ROOT_USERNAME=${mongoadmin:-user}
+      - MONGO_INITDB_ROOT_PASSWORD=${mongopass:-user}
+      - MONGO_INITDB_DATABASE=${mongodb:-user}
+    restart: on-failure
+    # volumes:
+    #   # - ./init:/docker-entrypoint-initdb.d/
+    #   # - ./init/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+    #   - ./init/init.sh:/docker-entrypoint-initdb.d/init.sh
+    ports:
+      - ${database_mongo_porta}:27017
+    networks:
+      mynet:
+        ipv4_address: 10.7.9.3
+    logging:
+      options:
+        max-size: 50m
+  guimongo:
+    container_name: postgrestest_mongodbgui
+    build:
+      context: ./guimongo
+    restart: on-failure
+    ports:
+      - ${gui_mongo_porta}:8081
+    networks:
+      mynet:
+        ipv4_address: 10.7.9.11
+    depends_on:
+      - databasemongo
+
+# creo una rete interna
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.7.9.0/16
+          gateway: 10.7.9.1
