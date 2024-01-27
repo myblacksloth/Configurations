@@ -1,0 +1,76 @@
+
+(C) Antonio Maulucci 2024
+
+
+
+      $$\                     $$\                           
+      $$ |                    $$ |                          
+ $$$$$$$ | $$$$$$\   $$$$$$$\ $$ |  $$\  $$$$$$\   $$$$$$\  
+$$  __$$ |$$  __$$\ $$  _____|$$ | $$  |$$  __$$\ $$  __$$\ 
+$$ /  $$ |$$ /  $$ |$$ /      $$$$$$  / $$$$$$$$ |$$ |  \__|
+$$ |  $$ |$$ |  $$ |$$ |      $$  _$$<  $$   ____|$$ |      
+\$$$$$$$ |\$$$$$$  |\$$$$$$$\ $$ | \$$\ \$$$$$$$\ $$ |      
+ \_______| \______/  \_______|\__|  \__| \_______|\__|
+
+
+
+
+
+                                               dP                     
+                                               88                     
+.d8888b. dP.  .dP 88d888b. .d8888b. 88d888b. d8888P .d8888b. 88d888b. 
+88ooood8  `8bd8'  88'  `88 88'  `88 88'  `88   88   88ooood8 88'  `88 
+88.  ...  .d88b.  88.  .88 88.  .88 88         88   88.  ... 88       
+`88888P' dP'  `dP 88Y888P' `88888P' dP         dP   `88888P' dP       
+                  88                                                  
+                  dP
+
+
+
+
+sudo docker pull fedora
+
+sudo docker run -it --name fedoracarrozzato fedora
+
+sudo docker start fedoracarrozzato
+
+sudo docker exec -it fedoracarrozzato /bin/bash
+
+sudo docker stop fedoracarrozzato
+
+>>
+yum update
+yum install -y vim nano cntlm zsh wget openssl ncurses iptables-services
+<<
+
+# creo immagine dal container
+sudo docker commit fedoracarrozzato fedoracarrozzato:latest
+# per esportare direttamente il container usare:
+#       sudo docker export fedoracarrozzato > dockercontainer_fedora_carrozzato.tar
+#       ma il comando export non esporta i metadati
+
+# salvo l'immagine in un file tar
+sudo docker save fedoracarrozzato:latest > dockerimage_fedora_carrozzato.tar
+
+
+# elimino il container e l'immagine
+sudo docker rm fedoracarrozzato
+sudo docker image rm fedoracarrozzato:latest
+# sudo docker image prune -a
+# sudo docker buildx prune -a
+
+# provo a reimportare l'immagine
+# sudo docker import dockerimage_fedora_carrozzato.tar fedoracarrozzato:latest
+#       ma questo comando non importa i metadati dell'immagine
+sudo docker load -i dockerimage_fedora_carrozzato.tar
+
+# ======================================================================
+
+# sudo docker run -it --name fedoracarrozzato fedoracarrozzato:latest
+# questo comando restituisce un errore perche' non c'e' un entrypoint
+
+sudo docker run -it --name fedoracarrozzato fedoracarrozzato:latest
+
+sudo docker start fedoracarrozzato
+sudo docker exec -it fedoracarrozzato /bin/bash
+sudo docker stop fedoracarrozzato
