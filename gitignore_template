@@ -1,90 +1,55 @@
+########################################
+# SISTEMA OPERATIVO
+########################################
+# macOS
 .DS_Store
-*.png
+
+# Windows
+Thumbs.db
+*.lnk
+
+# Linux / swap
+*.swp
+*.swo
+
+# File temporanei comuni
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.rej
+*.pid
+
+
+########################################
+# ARCHIVI / COMPRESSI
+########################################
 *.zip
 *.7z
-*.tar.gz
 *.rar
-*.exe
-*.dll
 *.tar
+*.tar.gz
 *.txz
 *.tar.xz
 *.zst
 *.iso
-*.engc
-*.enc
-
-*template*
-
-.vscode/
-.idea/
-node_modules/
-dist/
-.env
-.env.local
-.env.*.local
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-coverage/
-.cache/
-.next/
-out/
-build/
-.DS_Store
-Thumbs.db
-*.swp
-*.swo
-*.bak
-*.tmp
-*.old
-*.orig
-*.rej
-*.class
-*.jar
-*.war
-*.ear
-*.iml
-*.ipr
-*.iws
-*.log
-*.sql
-*.sqlite
-*.sqlite3
-*.db
-*.pem
-*.key
-*.crt
-*.p12
-*.der
-*.pfx
-.vagrant/
-.idea/
-*.sublime-project
-*.sublime-workspace
-*.tmproj
-*.code-workspace
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-*.user
-*.userosscache
-*.sln.docstates
-.vs/
-*.pdb
-*.opendb
-*.VC.db
-*.pidb
-*.booproj
-*.svd
-*.pvm
 
 
-# immagini
+########################################
+# FILE ESEGUIBILI
+########################################
+*.exe
+*.dll
+*.out
+*.exex
+
+
+########################################
+# MEDIA (immagini, video, audio)
+########################################
+# Immagini
+*.png
 *.jpg
 *.jpeg
 *.gif
@@ -101,16 +66,115 @@ Thumbs.db
 *.nef
 *.orf
 *.sr2
+
+# Video
 *.mp4
 *.mov
 *.avi
 *.mkv
-*.mp3
 
-# certificati
+# Audio
+*.mp3
+*.wav
+
+
+########################################
+# FILE SENSIBILI (chiavi e certificati)
+########################################
 *.crt
 *.key
 *.pem
-*.p12
 *.der
 *.pfx
+*.p12
+*.enc
+*.engc
+
+
+########################################
+# DATBASE / STORAGE LOCALE
+########################################
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+
+
+########################################
+# AMBIENTE / CONFIGURAZIONI PRIVATE
+########################################
+.env
+.env.local
+.env.*.local
+
+# Template privati
+*template*
+
+
+########################################
+# NODE / JAVASCRIPT / TYPESCRIPT
+########################################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+build/
+out/
+
+# Next.js
+.next/
+.vercel/
+
+# Coverage
+coverage/
+
+# Cache varie
+.cache/
+
+
+########################################
+# EDITOR & IDE
+########################################
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.njsproj
+*.ntvs*
+*.sln
+*.pdb
+*.opendb
+*.VC.db
+*.pidb
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
+# Altro
+*.tmproj
+*.booproj
+*.svd
+*.pvm
+
+
+########################################
+# VARI
+########################################
+*.log
