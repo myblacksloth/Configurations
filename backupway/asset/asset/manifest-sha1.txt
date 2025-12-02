@@ -1,0 +1,9 @@
+da39a3ee5e6b4b0d3255bfef95601890afd80709  asset-data/bb/a
+da39a3ee5e6b4b0d3255bfef95601890afd80709  asset-data/bb/c
+da39a3ee5e6b4b0d3255bfef95601890afd80709  asset-data/bb/b
+da39a3ee5e6b4b0d3255bfef95601890afd80709  asset-data/aa/a
+da39a3ee5e6b4b0d3255bfef95601890afd80709  asset-data/aa/c
+da39a3ee5e6b4b0d3255bfef95601890afd80709  asset-data/aa/b
+da39a3ee5e6b4b0d3255bfef95601890afd80709  asset-data/cc/a
+da39a3ee5e6b4b0d3255bfef95601890afd80709  asset-data/cc/c
+da39a3ee5e6b4b0d3255bfef95601890afd80709  asset-data/cc/b
