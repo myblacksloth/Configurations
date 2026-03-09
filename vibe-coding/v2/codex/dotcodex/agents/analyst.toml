@@ -1,0 +1,4 @@
+model = "codex-mini-latest"
+approval_policy = "never"
+sandbox_mode = "read-only"
+model_instructions_file = "instructions/analyst.md"

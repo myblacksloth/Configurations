@@ -1,0 +1,4 @@
+model = "codex-mini-latest"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+model_instructions_file = "instructions/dockerizer.md"
