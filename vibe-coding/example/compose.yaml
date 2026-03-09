@@ -1,0 +1,8 @@
+services:
+  tinyapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: ["python", "-m", "tinyapp.cli", "--total", "49.9", "--member"]

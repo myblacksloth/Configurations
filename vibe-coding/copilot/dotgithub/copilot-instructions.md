@@ -1,21 +1,39 @@
 # Repository instructions for Copilot
 
-This repository contains a modular Python backend.
+This repository hosts a modular Python backend (Flask + PostgreSQL + Redis).
 
-General rules:
-- Use Python 3.11
-- Keep Flask routes thin
-- Put business logic in service modules
-- Isolate PostgreSQL access in dedicated modules
-- Redis configuration must come from environment variables
-- Use logging, not print
-- Use type hints in new or modified code
-- Avoid large refactors unless explicitly requested
-- Add or update pytest tests for non-trivial changes
-- Do not change database schema unless explicitly requested
+## Objectives
+- Deliver the smallest coherent change that solves the requested task.
+- Preserve current architecture unless refactor is explicitly requested.
+- Keep changes easy to review, test, and roll back.
 
-When making changes:
-1. inspect existing files first
-2. prefer the smallest coherent change
-3. preserve current structure unless a refactor is explicitly requested
-4. explain files changed and how to verify
+## Code and architecture rules
+- Use Python 3.11.
+- Keep Flask routes thin; place business logic in service modules.
+- Isolate database access in dedicated data-access modules.
+- Keep Redis and database configuration in environment variables.
+- Use logging instead of print.
+- Use type hints in all new or modified code.
+- Do not hardcode secrets, tokens, URLs, or credentials.
+- Do not change database schema or migration history unless explicitly requested.
+- Avoid introducing new dependencies unless needed for the task.
+
+## Implementation workflow
+1. Inspect existing patterns before editing.
+2. Identify minimal file set to modify.
+3. Implement the smallest coherent diff.
+4. Add or update pytest coverage for non-trivial logic.
+5. Run focused verification commands when possible.
+6. Summarize what changed, why, and how to verify.
+
+## Containerization guidance
+- If asked to dockerize, first reuse/adapt existing Dockerfile or compose files.
+- Add new container files only when missing.
+- Keep secrets in environment variables, not in image or compose files.
+
+## Output expectations
+When responding, include:
+- files changed
+- behavior changed
+- risks or follow-ups
+- exact verification commands (or why verification could not run)

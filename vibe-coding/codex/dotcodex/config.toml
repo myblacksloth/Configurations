@@ -1,0 +1,40 @@
+model = "gpt-5"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+[features]
+multi_agent = true
+
+[agents]
+max_threads = 6
+max_depth = 1
+
+[agents.architect]
+description = "Plan the smallest coherent implementation strategy and file placement."
+config_file = "agents/architect.toml"
+nickname_candidates = ["arch", "planner"]
+
+[agents.coder]
+description = "Implement approved changes with minimal, coherent diffs."
+config_file = "agents/coder.toml"
+nickname_candidates = ["impl", "dev"]
+
+[agents.reviewer]
+description = "Review changes for correctness, regressions, security, and architecture violations."
+config_file = "agents/reviewer.toml"
+nickname_candidates = ["audit", "rev"]
+
+[agents.tester]
+description = "Add or update pytest coverage and define manual verification when needed."
+config_file = "agents/tester.toml"
+nickname_candidates = ["qa", "tests"]
+
+[agents.dockerizer]
+description = "Create or adapt Dockerfile and compose configuration with minimal infrastructure changes."
+config_file = "agents/dockerizer.toml"
+nickname_candidates = ["docker", "container"]
+
+[agents.analyst]
+description = "Read the repository and produce a structured Markdown analysis report."
+config_file = "agents/analyst.toml"
+nickname_candidates = ["analysis", "insights"]

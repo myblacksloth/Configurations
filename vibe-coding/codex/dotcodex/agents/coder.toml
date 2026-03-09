@@ -1,0 +1,4 @@
+model = "gpt-5"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+model_instructions_file = "instructions/coder.md"
